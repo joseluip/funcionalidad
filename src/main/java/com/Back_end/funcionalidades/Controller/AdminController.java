@@ -38,7 +38,5 @@ public class AdminController {
         return adminService.save(h);
     }
     
-    public  void cualquiercosa(){
-        
-    }
+    
 }
