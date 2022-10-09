@@ -37,4 +37,8 @@ public class AdminController {
     public Admin save(@RequestBody Admin h) {
         return adminService.save(h);
     }
+    
+    public  void cualquiercosa(){
+        
+    }
 }
