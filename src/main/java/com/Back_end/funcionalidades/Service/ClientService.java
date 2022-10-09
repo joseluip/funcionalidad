@@ -45,7 +45,7 @@ public class ClientService {
     public Client update(Client k) {
         if (k.getIdClient() != null) {
             Optional<Client> tu = clientRepository.getClient(k.getIdClient());
-            if (tu.isEmpty()) {
+            if (!tu.isPresent()) {
                 if (k.getName() != null) {
                     tu.get().setName(k.getName());
                 }
@@ -71,7 +71,7 @@ public class ClientService {
     public boolean delete(int idClient) {
         boolean bandera = false;
         Optional<Client> t = clientRepository.getClient(idClient);
-        if (t.isEmpty()) {
+        if (!t.isPresent()) {
             clientRepository.delete(t.get());
             bandera = true;
         }

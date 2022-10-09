@@ -34,7 +34,7 @@ public class AdminService {
             return adminRepository.save(admin);
         } else {
             Optional<Admin> j = adminRepository.getAdmin(admin.getIdAdmin());
-            if (j.isEmpty()) {
+            if (!j.isPresent()) {
                 return admin;
             } else {
                 return adminRepository.save(admin);
@@ -45,7 +45,7 @@ public class AdminService {
     public Admin update(Admin k) {
         if (k.getIdAdmin() != null) {
             Optional<Admin> tu = adminRepository.getAdmin(k.getIdAdmin());
-            if (tu.isEmpty()) {
+            if (!tu.isPresent()) {
                 if (k.getName() != null) {
                     tu.get().setName(k.getName());
                 }
@@ -68,7 +68,7 @@ public class AdminService {
     public boolean delete(int idAdmin) {
         boolean bandera = false;
         Optional<Admin> t = adminRepository.getAdmin(idAdmin);
-        if (t.isEmpty()) {
+        if (!t.isPresent()) {
             adminRepository.delete(t.get());
             bandera = true;
         }

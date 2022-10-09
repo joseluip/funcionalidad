@@ -29,16 +29,16 @@ public class Message implements Serializable {
     private Integer idMessage;
     @Column(length = 250)
     private String messageText;
+    
+    @ManyToOne
+    @JoinColumn(name = "idCabin")
+    @JsonIgnoreProperties({"messages", "reservations"})// propiedades a ignorar
+    private Cabin cabin;
 
     @ManyToOne
     @JoinColumn(name = "idClient") //llave foranea
     @JsonIgnoreProperties({"messages", "reservations"})// propiedades a ignorar
     private Client client;
-    
-    @ManyToOne
-    @JoinColumn(name = "idCabin")
-    @JsonIgnoreProperties({"messages","reservations"})// propiedades a ignorar
-    private Cabin cabin;
 
     public Integer getIdMessage() {
         return idMessage;
@@ -55,8 +55,8 @@ public class Message implements Serializable {
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
-    
-      public Client getClient() {
+
+    public Client getClient() {
         return client;
     }
 
@@ -71,6 +71,5 @@ public class Message implements Serializable {
     public void setCabin(Cabin cabin) {
         this.cabin = cabin;
     }
-    
 
 }

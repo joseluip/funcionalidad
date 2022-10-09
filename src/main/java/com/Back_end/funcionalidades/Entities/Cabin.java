@@ -32,24 +32,25 @@ public class Cabin implements Serializable {
 
     private Integer id;
     @Column(length = 45)
+    private String name;
+    @Column(length = 45)
     private String brand;
     private Integer rooms;
     private String description;
-    @Column(length = 45)
-    private String name;
 
     @ManyToOne
     @JoinColumn(name = "categoryid") //llave foranea
     @JsonIgnoreProperties("cabins")
     private Category category;
+    
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
+    @JsonIgnoreProperties({"cabin","client"})
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "cabin")
     @JsonIgnoreProperties({"cabin","messages"})
     private List<Reservation> reservations;
     
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin","client"})
-    private List<Message> messages;
 
     public Integer getId() {
         return id;

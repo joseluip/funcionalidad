@@ -45,7 +45,7 @@ public class ReservationService {
     public Reservation update(Reservation k) {
         if (k.getIdReservation() != null) {
             Optional<Reservation> tu = reservationRepository.getReservation(k.getIdReservation());
-            if (tu.isEmpty()) {
+            if (!tu.isPresent()) {
                 reservationRepository.save(tu.get());
             }
         }
@@ -56,7 +56,7 @@ public class ReservationService {
     public boolean delete(int idRservation) {
         boolean bandera = false;
         Optional<Reservation> t = reservationRepository.getReservation(idRservation);
-        if (t.isEmpty()) {
+        if (!t.isPresent()) {
             reservationRepository.delete(t.get());
             bandera = true;
         }

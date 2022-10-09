@@ -45,7 +45,7 @@ public class MessageService {
     public Message update(Message k) {
         if (k.getIdMessage() == null) {
             Optional<Message> tu = messageRepository.getMessage(k.getIdMessage());
-            if (tu.isEmpty()) {
+            if (!tu.isPresent()) {
                 messageRepository.save(k);
             }
         }
@@ -55,7 +55,7 @@ public class MessageService {
     public boolean delete(int idMessage) {
         boolean bandera = false;
         Optional<Message> t = messageRepository.getMessage(idMessage);
-        if (t.isEmpty()) {
+        if (!t.isPresent()) {
             messageRepository.delete(t.get());
             bandera = true;
         }

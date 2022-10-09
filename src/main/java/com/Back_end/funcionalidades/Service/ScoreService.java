@@ -45,7 +45,7 @@ public class ScoreService {
     public Score update(Score k) {
         if (k.getIdScore() != null) {
             Optional<Score> tu = scoreRepository.getScore(k.getIdScore());
-            if (tu.isEmpty()) {
+            if (!tu.isPresent()) {
                 if (k.getStars()!= null && k.getStars()<= 5) {
                     tu.get().setStars(k.getStars());
                 }
@@ -65,7 +65,7 @@ public class ScoreService {
     public boolean delete(int idScore) {
         boolean bandera = false;
         Optional<Score> t = scoreRepository.getScore(idScore);
-        if (t.isEmpty()) {
+        if (!t.isPresent()) {
             scoreRepository.delete(t.get());
             bandera = true;
         }

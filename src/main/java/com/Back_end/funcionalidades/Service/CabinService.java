@@ -43,7 +43,7 @@ public class CabinService {
     public Cabin update(Cabin k){
         if(k.getId()!=null){
            Optional<Cabin> tu = cabinRepository.getCabin(k.getId());
-           if(tu.isEmpty()){
+           if(!tu.isPresent()){
                if(k.getName()!=null){
                    tu.get().setName(k.getName());
                }
@@ -72,7 +72,7 @@ public class CabinService {
     public boolean delete(int id){
         boolean bandera=false;
         Optional<Cabin> t = cabinRepository.getCabin(id);
-        if(t.isEmpty()){
+        if(!t.isPresent()){
             cabinRepository.delete(t.get());
             bandera=true;
         }
