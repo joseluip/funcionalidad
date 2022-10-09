@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
-//@ComponentScan(basePackages = {""})
+@ComponentScan(basePackages = {""})
 public class FuncionalidadesApplication {
 
     public static void main(String[] args) {
@@ -17,4 +17,4 @@ public class FuncionalidadesApplication {
 
 //!hola
 //yyyhhiioollll
-//gracias
+//graciascd
