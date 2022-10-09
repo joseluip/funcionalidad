@@ -32,7 +32,7 @@ public class CabinService {
             return cabinRepository.save(cabin);
         }else{
             Optional<Cabin> j= cabinRepository.getCabin(cabin.getId());
-            if(j.isEmpty()){
+            if(!j.isPresent()){
                 return cabin;
             }else{
                 return cabinRepository.save(cabin);

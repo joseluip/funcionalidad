@@ -34,7 +34,7 @@ public class ClientService {
             return clientRepository.save(client);
         } else {
             Optional<Client> j = clientRepository.getClient(client.getIdClient());
-            if (j.isEmpty()) {
+            if (!j.isPresent()) {
                 return client;
             } else {
                 return clientRepository.save(client);
