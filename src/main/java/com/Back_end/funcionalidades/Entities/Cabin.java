@@ -48,7 +48,7 @@ public class Cabin implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin","client"})  //"messages"
+    @JsonIgnoreProperties({"cabin","messages"})  
     private List<Reservation> reservations;
     
 
