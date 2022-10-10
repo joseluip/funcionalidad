@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class AdminRepository {
+
     @Autowired
     private AdminCrudRepository adminCrudRepository;
 
@@ -35,5 +36,5 @@ public class AdminRepository {
     public void delete(Admin admin) {
         adminCrudRepository.delete(admin);
     }
-    
+
 }

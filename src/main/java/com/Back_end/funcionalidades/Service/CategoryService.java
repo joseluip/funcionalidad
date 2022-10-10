@@ -34,7 +34,7 @@ public class CategoryService {
             return categoryRepository.save(category);
         } else {
             Optional<Category> j = categoryRepository.getCategory(category.getId());
-            if (!j.isPresent()) {
+            if (j.isPresent()) {
                 return category;
             } else {
                 return categoryRepository.save(category);
@@ -45,7 +45,7 @@ public class CategoryService {
     public Category update(Category k) {
         if (k.getId() != null) {
             Optional<Category> tu = categoryRepository.getCategory(k.getId());
-            if (!tu.isPresent()) {
+            if (tu.isPresent()) {
                 if (k.getName()!= null) {
                     tu.get().setName(k.getName());
                 }
@@ -65,7 +65,7 @@ public class CategoryService {
     public boolean delete(int id) {
         boolean bandera = false;
         Optional<Category> t = categoryRepository.getCategory(id);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             categoryRepository.delete(t.get());
             bandera = true;
         }

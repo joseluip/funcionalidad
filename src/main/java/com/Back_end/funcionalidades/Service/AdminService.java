@@ -68,7 +68,7 @@ public class AdminService {
     public boolean delete(int idAdmin) {
         boolean bandera = false;
         Optional<Admin> t = adminRepository.getAdmin(idAdmin);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             adminRepository.delete(t.get());
             bandera = true;
         }

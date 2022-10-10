@@ -34,7 +34,7 @@ public class ReservationService {
             return reservationRepository.save(reservation);
         } else {
             Optional<Reservation> j = reservationRepository.getReservation(reservation.getIdReservation());
-            if (!j.isPresent()) {
+            if (j.isPresent()) {
                 return reservation;
             } else {
                 return reservationRepository.save(reservation);
@@ -56,7 +56,7 @@ public class ReservationService {
     public boolean delete(int idRservation) {
         boolean bandera = false;
         Optional<Reservation> t = reservationRepository.getReservation(idRservation);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             reservationRepository.delete(t.get());
             bandera = true;
         }

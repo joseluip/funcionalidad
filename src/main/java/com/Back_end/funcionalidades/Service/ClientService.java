@@ -34,7 +34,7 @@ public class ClientService {
             return clientRepository.save(client);
         } else {
             Optional<Client> j = clientRepository.getClient(client.getIdClient());
-            if (!j.isPresent()) {
+            if (j.isPresent()) {
                 return client;
             } else {
                 return clientRepository.save(client);
@@ -71,7 +71,7 @@ public class ClientService {
     public boolean delete(int idClient) {
         boolean bandera = false;
         Optional<Client> t = clientRepository.getClient(idClient);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             clientRepository.delete(t.get());
             bandera = true;
         }

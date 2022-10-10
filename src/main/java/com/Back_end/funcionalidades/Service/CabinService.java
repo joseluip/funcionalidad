@@ -33,7 +33,7 @@ public class CabinService {
             return cabinRepository.save(cabin);
         } else {
             Optional<Cabin> j = cabinRepository.getCabin(cabin.getId());
-            if (!j.isPresent()) {
+            if (j.isPresent()) {
                 return cabin;
             } else {
                 return cabinRepository.save(cabin);
@@ -70,7 +70,7 @@ public class CabinService {
     public boolean delete(int id) {
         boolean bandera = false;
         Optional<Cabin> t = cabinRepository.getCabin(id);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             cabinRepository.delete(t.get());
             bandera = true;
         }

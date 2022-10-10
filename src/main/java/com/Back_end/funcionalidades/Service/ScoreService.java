@@ -34,7 +34,7 @@ public class ScoreService {
             return scoreRepository.save(score);
         } else {
             Optional<Score> j = scoreRepository.getScore(score.getIdScore());
-            if (!j.isPresent()) {
+            if (j.isPresent()) {
                 return score;
             } else {
                 return scoreRepository.save(score);
@@ -65,7 +65,7 @@ public class ScoreService {
     public boolean delete(int idScore) {
         boolean bandera = false;
         Optional<Score> t = scoreRepository.getScore(idScore);
-        if (!t.isPresent()) {
+        if (t.isPresent()) {
             scoreRepository.delete(t.get());
             bandera = true;
         }
