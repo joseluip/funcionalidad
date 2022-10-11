@@ -13,8 +13,8 @@ function leerClientes() {
             let cs = clientes.items;
             $("#listaClientes").empty();
             for (i = 0; i < cs.length; i++) {
-                $("#listaClientes").append(cs[i].id + " <b>" + cs[i].name + "</b> " + cs[i].email + " " + cs[i].age);
-                $("#listaClientes").append("<button onclick='borrarCliente(" + cs[i].id + ")'>Borrar</button><br>");
+                $("#listaClientes").append(cs[i].idClient + " <b>" + cs[i].name + "</b> " + cs[i].email + " " + cs[i].password + " " + cs[i].age);
+                $("#listaClientes").append("<button onclick='borrarCliente(" + cs[i].idClient + ")'>Borrar</button><br>");
 
             }
         },
@@ -27,12 +27,14 @@ function leerClientes() {
 function guardarCliente() {
     let idCliente = $("#idCliente").val();
     let nombre = $("#nombreCliente").val();
-    let mailCliente = $("#mailCliente").val();
+    let contrasena = $("#password").val();
+    let mailCliente = $("#emailCliente").val();
     let edad = $("#edadCliente").val();
 
     let data = {
-        id: idCliente,
+        idClient: idCliente,
         name: nombre,
+        password: contrasena,
         email: mailCliente,
         age: edad
     };
@@ -48,7 +50,8 @@ function guardarCliente() {
         success: function (pepito) {
             $("#idCliente").val("");
             $("#nombreCliente").val("");
-            $("#mailCliente").val("");
+            $("#emailCliente").val("");
+            $("#password").val("");
             $("#edadCliente").val("");
             alert("Operacion exitosa.");
         },
@@ -65,19 +68,21 @@ function guardarCliente() {
 function editarCliente() {
     let idCliente = $("#idCliente").val();
     let nombre = $("#nombreCliente").val();
-    let mailCliente = $("#mailCliente").val();
+    let contrasena = $("#password").val();
+    let mailCliente = $("#emailCliente").val();
     let edad = $("#edadCliente").val();
 
     let data = {
-        id: idCliente,
+        idClient: idCliente,
         name: nombre,
+        password: contrasena,
         email: mailCliente,
         age: edad
     };
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Client/update',
         type: 'PUT',
         //   dataType : 'json',
         data: dataToSend,
@@ -98,12 +103,18 @@ function editarCliente() {
                         $("#mailCliente").focus();
                         return false;
                     } else {
-                        if ($("#edadCliente").val() === "") {
-                            alert("El campo Edad de Cliente esta vacio");
-                            $("#edadCliente").focus();
+                        if ($("#password").val() === "") {
+                            alert("El campo Contraseña esta vacio");
+                            $("#password").focus();
                             return false;
                         } else {
-                            alert("Acutalizado exitosamente");
+                            if ($("#edadCliente").val() === "") {
+                                alert("El campo Edad de Cliente esta vacio");
+                                $("#edadCliente").focus();
+                                return false;
+                            } else {
+                                alert("Acutalizado exitosamente");
+                            }
                         }
                     }
                 }
@@ -121,12 +132,12 @@ function editarCliente() {
 
 function borrarCliente(idCliente) {
     let data = {
-        id: idCliente
+        idCliente: idCliente
     };
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Client/{id}',
         type: 'DELETE',
         //   dataType : 'json',
         data: dataToSend,
@@ -134,7 +145,8 @@ function borrarCliente(idCliente) {
         success: function (pepito) {
             $("#idCliente").val("");
             $("#nombreCliente").val("");
-            $("#mailCliente").val("");
+            $("#emailCliente").val("");
+            $("#password").val("");
             $("#edadCliente").val("");
             alert("Borrado exitosamente.");
         },

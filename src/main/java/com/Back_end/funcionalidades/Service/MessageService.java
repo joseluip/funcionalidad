@@ -43,10 +43,14 @@ public class MessageService {
     }
 
     public Message update(Message k) {
-        if (k.getIdMessage() == null) {
+        if (k.getIdMessage() != null) {
             Optional<Message> tu = messageRepository.getMessage(k.getIdMessage());
-            if (!tu.isPresent()) {
-                messageRepository.save(k);
+            if (tu.isPresent()) {
+                if (k.getMessageText() != null) {
+                    tu.get().setMessageText(k.getMessageText());
+                }
+                messageRepository.save(tu.get());
+                return tu.get();
             }
         }
         return k;

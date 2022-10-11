@@ -44,7 +44,7 @@ public class CabinService {
     public Cabin update(Cabin k) {
         if (k.getId() != null) {
             Optional<Cabin> tu = cabinRepository.getCabin(k.getId());
-            if (!tu.isPresent()) {
+            if (tu.isPresent()) {
                 if (k.getName() != null) {
                     tu.get().setName(k.getName());
                 }

@@ -45,7 +45,7 @@ public class ClientService {
     public Client update(Client k) {
         if (k.getIdClient() != null) {
             Optional<Client> tu = clientRepository.getClient(k.getIdClient());
-            if (!tu.isPresent()) {
+            if (tu.isPresent()) {
                 if (k.getName() != null) {
                     tu.get().setName(k.getName());
                 }

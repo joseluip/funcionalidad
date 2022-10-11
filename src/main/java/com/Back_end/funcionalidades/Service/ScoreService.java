@@ -45,7 +45,7 @@ public class ScoreService {
     public Score update(Score k) {
         if (k.getIdScore() != null) {
             Optional<Score> tu = scoreRepository.getScore(k.getIdScore());
-            if (!tu.isPresent()) {
+            if (tu.isPresent()) {
                 if (k.getStars()!= null && k.getStars()<= 5) {
                     tu.get().setStars(k.getStars());
                 }

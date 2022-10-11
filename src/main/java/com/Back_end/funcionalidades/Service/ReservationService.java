@@ -45,8 +45,18 @@ public class ReservationService {
     public Reservation update(Reservation k) {
         if (k.getIdReservation() != null) {
             Optional<Reservation> tu = reservationRepository.getReservation(k.getIdReservation());
-            if (!tu.isPresent()) {
+            if (tu.isPresent()) {
+                if(k.getStartDate()!= null){
+                    tu.get().setStartDate(k.getStartDate());
+                }
+                if(k.getDevolutionDate()!=null){
+                    tu.get().setDevolutionDate(k.getDevolutionDate());
+                }
+                if(k.getStatus()!=null){
+                    tu.get().setStatus(k.getStatus());
+                }
                 reservationRepository.save(tu.get());
+                return tu.get();
             }
         }
 

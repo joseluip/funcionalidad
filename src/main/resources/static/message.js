@@ -13,8 +13,8 @@ function leerMensajes() {
             let ms = mensaje.items;
             $("#mensaje").empty();
             for (i = 0; i < ms.length; i++) {
-                $("#mensaje").append(ms[i].id + "<b>" + ms[i].messagetext + "</b>");
-                $("#mensaje").append("<button onclick='borrarMensaje(" + ms[i].id + ")'>Borrar</button><br>");
+                $("#mensaje").append(ms[i].idMessage + "<b>" + ms[i].messageText + "</b>");
+                $("#mensaje").append("<button onclick='borrarMensaje(" + ms[i].idMessage + ")'>Borrar</button><br>");
 
             }
         },
@@ -30,8 +30,8 @@ function guardarMensaje() {
     let nombre = $("#comentarios").val();
 
     let data = {
-        id: idMensaje,
-        messagetext: nombre
+        idMeessage: idMensaje,
+        messageText: nombre
     };
 
     let dataToSend = JSON.stringify(data);
@@ -61,13 +61,13 @@ function editarMensaje() {
     let nombre = $("#comentarios").val();
 
     let data = {
-        id: idMensaje,
-        messagetext: nombre
+        idMessage: idMensaje,
+        messageText: nombre
     };
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Message/update',
         type: 'PUT',
         //   dataType : 'json',
         data: dataToSend,
@@ -98,12 +98,12 @@ function editarMensaje() {
 
 function borrarMensaje(idMensaje) {
     let data = {
-        id: idMensaje
+        idMessage: idMensaje
     };
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Message/{id}',
         type: 'DELETE',
         //   dataType : 'json',
         data: dataToSend,

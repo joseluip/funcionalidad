@@ -9,7 +9,7 @@ function leerCabana() {
             let cb = cabana.items;
             $("#cabana").empty();
             for (i = 0; i < cb.length; i++) {
-                $("#cabana").append(cb[i].id + " <b>" + cb[i].brand + "</b> " + cb[i].rooms + " " + cb[i].category_id + " " + cb[i].name);
+                $("#cabana").append(cb[i].id + " <b>" + cb[i].brand + "</b> " + cb[i].rooms + " " + cb[i].description + " " + cb[i].name);
                 $("#cabana").append("<button onclick='borrarCabana(" + cb[i].id + ")'>Borrar</button><br>");
             }
 
@@ -24,14 +24,14 @@ function guardarCabana() {
     let idCabana = $("#idCabana").val();
     let Tipo = $("#Marca").val();
     let Marcas = $("#Habitaciones").val();
-    let numero = $("#id_category").val();
+    let numero = $("#Description").val();
     let persona = $("#nombre").val();
 
     let data = {
         id: idCabana,
         brand: Tipo,
         rooms: Marcas,
-        category_id: numero,
+        description: numero,
         name: persona
     };
 
@@ -47,7 +47,7 @@ function guardarCabana() {
             $("#idCabana").val("");
             $("#Marca").val("");
             $("#Habitaciones").val("");
-            $("#id_category").val("");
+            $("#Description").val("");
             $("#nombre").val("");
             alert("Guardado exitosamente.");
         },
@@ -66,20 +66,20 @@ function editarCabana() {
     let idCabana = $("#idCabana").val();
     let Tipo = $("#Marca").val();
     let Marcas = $("#Habitaciones").val();
-    let numero = $("#id_category").val();
+    let numero = $("#Description").val();
     let persona = $("#nombre").val();
 
     let data = {
         id: idCabana,
         brand: Tipo,
         rooms: Marcas,
-        category_id: numero,
+        description: numero,
         name: persona
     };
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Cabin/update',
         type: 'PUT',
         //   dataType : 'json',
         data: dataToSend,
@@ -100,8 +100,8 @@ function editarCabana() {
                         $("#Habitaciones").focus();
                         return false;
                     } else {
-                        if ($("#id_category").val() === "") {
-                            alert("El campo Category_id esta vacio");
+                        if ($("#Description").val() === "") {
+                            alert("El campo Description esta vacio");
                             return false;
                         } else {
                             if ($("#nombre").val() === "") {
@@ -133,7 +133,7 @@ function borrarCabana(idCabana) {
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: '',
+        url: 'http://132.145.243.225:8080/api/Cabin/{id}',
         type: 'DELETE',
         //   dataType : 'json',
         data: dataToSend,
@@ -142,7 +142,7 @@ function borrarCabana(idCabana) {
             $("#idCabana").val("");
             $("#Marca").val("");
             $("#Habitaciones").val("");
-            $("#id_category").val("");
+            $("#Description").val("");
             $("#nombre").val("");
             alert("Borrado exitosamente.");
         },
