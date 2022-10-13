@@ -6,11 +6,11 @@ function leerScore() {
         dataType: 'json',
 
         success: function (score) {
-            let cb = score.items;
+            let cw = score.items;
             $("#score").empty();
-            for (i = 0; i < cb.length; i++) {
-                $("#score").append(cb[i].idScore + " <b>" + cb[i].messageText + "</b> " + cb[i].stars);
-                $("#score").append("<button onclick='borrarScore(" + cb[i].idScore + ")'>Borrar</button><br>");
+            for (i = 0; i < cw.length; i++) {
+                $("#score").append(cw[i].idScore + " <b>" + cw[i].messageText + "</b> " + cw[i].stars);
+                $("#score").append("<button onclick='borrarScore(" + cw[i].idScore + ")'>Borrar</button><br>");
             }
 
         },

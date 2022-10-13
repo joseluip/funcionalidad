@@ -6,11 +6,11 @@ function leerReservation() {
         dataType: 'json',
 
         success: function (reservacion) {
-            let cb = reservacion.items;
+            let cp = reservacion.items;
             $("#reservacion").empty();
-            for (i = 0; i < cb.length; i++) {
-                $("#reservacion").append(cb[i].idReservation + " <b>" + cb[i].startDate + "</b> " + cb[i].devolutionDate + " " + cb[i].status);
-                $("#reservacion").append("<button onclick='borrarReservation(" + cb[i].idReservation + ")'>Borrar</button><br>");
+            for (i = 0; i < cp.length; i++) {
+                $("#reservacion").append(cp[i].idReservation + " <b>" + cp[i].startDate + "</b> " + cp[i].devolutionDate + " " + cp[i].status);
+                $("#reservacion").append("<button onclick='borrarReservation(" + cp[i].idReservation + ")'>Borrar</button><br>");
             }
 
         },

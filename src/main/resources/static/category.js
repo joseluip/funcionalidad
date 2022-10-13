@@ -7,11 +7,11 @@ function leerCategoria() {
         dataType: 'json',
 
         success: function (categoria) {
-            let cb = categoria.items;
+            let cl = categoria.items;
             $("#categoria").empty();
-            for (i = 0; i < cb.length; i++) {
-                $("#categoria").append(cb[i].id + " <b>" + cb[i].name + "</b> " + cb[i].description);
-                $("#categoria").append("<button onclick='borrarCategory(" + cb[i].id + ")'>Borrar</button><br>");
+            for (i = 0; i < cl.length; i++) {
+                $("#categoria").append(cl[i].id + " <b>" + cl[i].name + "</b> " + cl[i].description);
+                $("#categoria").append("<button onclick='borrarCategory(" + cl[i].id + ")'>Borrar</button><br>");
             }
 
         },
