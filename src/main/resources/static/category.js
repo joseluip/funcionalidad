@@ -23,8 +23,8 @@ function leerCategoria() {
 
 function guardarCategory() {
     let idCategory = $("#idCategory").val();
-    let Name = $("#nombre").val();
-    let Description = $("#Description").val();
+    let Name = $("#name").val();
+    let Description = $("#Descripcion").val();
 
     let data = {
         id: idCategory,
@@ -43,8 +43,8 @@ function guardarCategory() {
         contentType: 'application/json',
         success: function (category) {
             $("#idCategory").val("");
-            $("#nombre").val("");
-            $("#Description").val("");
+            $("#name").val("");
+            $("#Descripcion").val("");
             alert("Guardado exitosamente.");
         },
         error: function (xhr, status) {
@@ -60,8 +60,8 @@ function guardarCategory() {
 
 function editarCategory() {
     let idCategory = $("#idCategory").val();
-    let Name = $("#nombre").val();
-    let Description = $("#Description").val();
+    let Name = $("#name").val();
+    let Description = $("#Descripcion").val();
 
     let data = {
         id: idCategory,
@@ -82,14 +82,14 @@ function editarCategory() {
                 $("#idCategory").focus();
                 return false;
             } else {
-                if ($("#nombre").val() === "") {
+                if ($("#name").val() === "") {
                     alert("El campo Nombre esta vacio");
-                    $("#nombre").focus();
+                    $("#name").focus();
                     return false;
                 } else {
-                    if ($("#Description").val() === "") {
+                    if ($("#Descripcion").val() === "") {
                         alert("El campo Descripción esta vacio");
-                        $("#Description").focus();
+                        $("#Descripcion").focus();
                         return false;
                     } else {
                         alert("Actualizado exitosamente.");
@@ -121,8 +121,8 @@ function borrarCategory(idCategory) {
         contentType: 'application/json',
         success: function (category) {
             $("#idCategory").val("");
-            $("#nombre").val("");
-            $("#Description").val("");
+            $("#name").val("");
+            $("#Descripcion").val("");
             alert("Borrado exitosamente.");
         },
         error: function (xhr, status) {
