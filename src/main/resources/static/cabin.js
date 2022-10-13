@@ -1,7 +1,7 @@
 function leerCabana() {
 //FUNCION GET
     $.ajax({
-        url: 'api/Cabin/all',
+        url: 'http://132.145.243.225:8080/api/Cabin/all',
         type: 'GET',
         dataType: 'json',
 
@@ -38,7 +38,7 @@ function guardarCabana() {
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: 'api/Cabin/save',
+        url: 'http://132.145.243.225:8080/api/Cabin/save',
         type: 'POST',
         //   dataType : 'json',
         data: dataToSend,
@@ -79,7 +79,7 @@ function editarCabana() {
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: 'api/Cabin/update',
+        url: 'http://132.145.243.225:8080/api/Cabin/update',
         type: 'PUT',
         //   dataType : 'json',
         data: dataToSend,
@@ -133,7 +133,7 @@ function borrarCabana(idCabana) {
     let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: 'api/Cabin/{id}',
+        url: 'http://132.145.243.225:8080/api/Cabin/{id}',
         type: 'DELETE',
         //   dataType : 'json',
         data: dataToSend,
