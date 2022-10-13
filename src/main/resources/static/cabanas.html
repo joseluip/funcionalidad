@@ -7,27 +7,41 @@ Front- end de cabin.
         <title>CABAÑAS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h2{
+                text-align: center;
+                font-size: 40px;
+            }
+            body{
+                background-color: #85D3F3;
+            }
+        </style>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="myScript.js"></script>
+    <script type="text/javascript" src="client.js"></script>
     <script type="text/javascript" src="message.js"></script>
     <script type="text/javascript" src="cabin.js"></script>
+    <script type="text/javascript" src="category.js"></script>
+    <script type="text/javascript" src="reservation.js"></script>
+    <script type="text/javascript" src="score.js"></script>
     <body>
-        <h1>Clientes!</h1>
+        <h2 style="color:#9E301C"> CABAÑAS</h2><br>
+
+        <h1 style="color:#6a5acd">Clientes!</h1>
 
         <p><strong><em>Id de Cliente:</em></strong> <input type="number" id="idCliente" size="20">      </p><br>
         <p><strong><em>Nombre de Cliente: <input type="text" id="nombreCliente" size="20">              </p><br>
                     <p><strong><em>Correo de Cliente: <input type="text" id="emailCliente" size="20">                </p><br>
                                 <p><strong><em>Contraseña: <input type="password" id="password" size="20">                </p><br>
-                                            <p><strong><em>Edad de Cliente: <input type="number" id="edadCliente" size="20">                </p><br>
+                                            <p><strong><em>Edad de Cliente: <input type="number" id="edadCliente" size="20"></p><br>
 
 
                                                         <button onclick="guardarCliente()">GUARDAR CLIENTE</button>
                                                         <a href="detalles.html"><input type="button" value="DETALLES"></a>
 
-                                                        <div id="mensaje"></div>
+                                                        <div id="listaClientes"></div>
 
-                                                        <h1>Mensajes!</h1>
+                                                        <h1 style="color:#6a5acd">Mensajes!</h1>
 
 
                                                         <p><strong><em>Id Mensaje:   </em></strong> <input type="number" id="idMensaje" size="20"><br></p>
@@ -39,18 +53,51 @@ Front- end de cabin.
 
                                                         <div id="mensaje"></div>
 
-                                                        <h1>Cabañas!</h1>
+                                                        <h1 style="color:#6a5acd">Cabañas!</h1>
 
                                                         <p><strong><em>Id Cabaña:  </em></strong>       <input type="number" id="idCabana" size="20">    </p>  <br>
-                                                        <p><strong><em>Brand:      </em></strong>       <input type="text" id="Marca" size="20">         </p>  <br>
-                                                        <p><strong><em>Rooms:      </em></strong>       <input type="number" id="Habitaciones" size="20"></p>  <br>
-                                                        <p><strong><em>Description:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br>
-                                                        <p><strong><em> Name:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>
+                                                        <p><strong><em>Marca:      </em></strong>       <input type="text" id="Marca" size="20">         </p>  <br>
+                                                        <p><strong><em>Habitaciones:      </em></strong>       <input type="number" id="Habitaciones" size="20"></p>  <br>
+                                                        <p><strong><em>Descripción:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br>
+                                                        <p><strong><em> Nombre:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>
 
                                                         <button onclick="guardarCabana()">GUARDAR CABANA</button>
                                                         <a href="detalles.html"><input type="button" value="DETALLES"></a>
 
                                                         <div id="cabana"></div>
+
+                                                        <h1 style="color:#6a5acd">Categoria!</h1>
+
+                                                        <p><strong><em>Id Categoy:  </em></strong>       <input type="number" id="idCategory" size="20">    </p>  <br>
+                                                        <p><strong><em> Nombre:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>                                                     
+                                                        <p><strong><em>Descripción:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br> 
+
+                                                        <button onclick="guardarCategory()">GUARDAR CATEGORIA</button>
+                                                        <a href="detalles.html"><input type="button" value="DETALLES"></a>
+
+                                                        <div id="categoria"></div>
+
+
+                                                        <h1 style="color:#6a5acd">Reservacion!</h1>
+
+                                                        <p><strong><em>Id Reservation:  </em></strong>      <input type="number" id="idReservation" size="20">    </p>  <br>
+                                                        <p><strong><em> Fecha de alquilamiento:      </em></strong>    <input type="date" id="iniciofecha" >        </p>  <br>                                                     
+                                                        <p><strong><em>Fin de alquilamiento:</em></strong>      <input type="date" id="finfecha" > </p>  <br> 
+                                                        <p><Strong><em>Estado :</em></strong>              <input type="text" id="estado" size="30"></p>
+
+                                                        <button onclick="guardarReservacion()">GUARDAR RESERVACION</button>
+                                                        <a href="detalles.html"><input type="button" value="DETALLES"></a>
+                                                        <div id="reservacion"></div>
+
+                                                        <h1 style="color:#6a5acd">Puntuación!</h1>
+
+                                                        <p><strong><em>Id Score:  </em></strong>              <input type="number" id="idScore" size="20">    </p>  
+                                                        <p><strong><em> Cuentanos tu experiencia: </em></strong><br>  <textarea id="comentarios" rows="5" cols="30" ></textarea><br></p>                                                          
+                                                        <p><strong><em>Estrellas&#x2730;:</em></strong>       <input type="number" id="stars" size="20" > </p>  <br>
+
+                                                        <button onclick="guardarScore()">GUARDAR PUNTUACION</button>
+                                                        <a href="detalles.html"><input type="button" value="DETALLES"></a>
+                                                        <div id="score"></div>
 
 
                                                         </body>

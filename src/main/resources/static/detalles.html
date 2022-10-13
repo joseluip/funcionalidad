@@ -8,17 +8,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>DETALLES</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+                font-size: 40px;
+            }
+            h2{
+                font-size: 30px;
+            }
+            body{
+                background-color: #85D3F3;
+            }
+        </style>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script type="text/javascript" src="message.js"></script>
     <script type="text/javascript" src="client.js"></script>
     <script type="text/javascript" src="cabin.js"></script>
-    <body>
-        <a href="cabanas.html"><input type="button" value="REGRESAR"></a>
-
-        <h1><em>DETALLES DE USUARIO</em></h1>
-
-        <p> <strong><em>Id Mensaje:</em></strong> <input type="number" id="idMensaje" size="20"><br></p>
+    <script type="text/javascript" src="category.js"></script>
+    <script type="text/javascript" src="reservation.js"></script>
+    <script type="text/javascript" src="score.js"></script>
+    <body>        
+        <h1 style="color:#0000ff"><em>DETALLES DE USUARIO</em></h1> 
+        <a href="cabanas.html"><input type="button" value="REGRESAR"></a>       
+        <br>
+        <br>
+        <h2 style="color:#6a5acd">Mensajes!</h2>
+        <p><strong><em>Id Mensaje:</em></strong> <input type="number" id="idMensaje" size="20"><br></p>                 
         <p><strong><em>Mensaje de texto:</em></strong><br>
             <textarea id="comentarios" rows="5" cols="30"></textarea><br></p>
 
@@ -28,6 +44,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div id="mensaje"></div>
 
         <br>
+        <h2 style="color:#6a5acd">Clientes!</h2>
+
         <p><strong><em>Id de Cliente:</em></strong> <input type="number" id="idCliente" size="20">   </p><br>
         <p><strong><em>Nombre de Cliente: <input type="text" id="nombreCliente" size="20">       </p><br>
                     <p><strong><em>Correo de Cliente: <input type="text" id="emailCliente" size="20">         </p><br>
@@ -37,21 +55,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                         <button onclick="editarCliente()">ACTUALIZAR CLIENTE</button>
                                                         <button onclick="leerClientes()">TRAER CLIENTES</button>
 
-                                                        <div id="listaClientes">
-
-                                                        </div>
+                                                        <div id="listaClientes"></div>
                                                         <br>
+                                                        <h2 style="color:#6a5acd">Cabañas!</h2>
 
                                                         <p><strong><em>Id Cabaña:  </em></strong>       <input type="number" id="idCabana" size="20">    </p>  <br>
-                                                        <p><strong><em>Brand:      </em></strong>       <input type="text" id="Marca" size="20">         </p>  <br>
-                                                        <p><strong><em>Rooms:      </em></strong>       <input type="number" id="Habitaciones" size="20"></p>  <br>
-                                                        <p><strong><em>Description:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br>
-                                                        <p><strong><em> Name:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>
+                                                        <p><strong><em>Marca:      </em></strong>       <input type="text" id="Marca" size="20">         </p>  <br>
+                                                        <p><strong><em>Habitaciones:      </em></strong>       <input type="number" id="Habitaciones" size="20"></p>  <br>
+                                                        <p><strong><em>Descripción:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br>
+                                                        <p><strong><em> Nombre:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>
 
                                                         <button onclick="editarCabana()">ACTUALIZAR CABAÑA</button>
                                                         <button onclick="leerCabana()">   TRAER CABAÑAS    </button>
 
                                                         <div id="cabana"></div>
+
+                                                        <h2 style="color:#6a5acd">Categoria!</h2>
+
+                                                        <p><strong><em>Id Categoy:  </em></strong>       <input type="number" id="idCategory" size="20">    </p>  <br>
+                                                        <p><strong><em> Nombre:      </em></strong>       <input type="text" id="nombre" size="20">        </p>  <br>                                                     
+                                                        <p><strong><em>Descripción:</em></strong>       <input type="text" id="Description" size="30"> </p>  <br> 
+
+                                                        <button onclick="editarCategory()">ACTUALIZAR CATEGORIA</button>
+                                                        <button onclick="leerCategoria()">   TRAER CATEGORIAS    </button>
+                                                        
+                                                        <div id="categoria"></div>
+
+                                                        <h2 style="color:#6a5acd">Reservacion!</h2>
+
+                                                        <p><strong><em>Id Reservation:  </em></strong>      <input type="number" id="idReservation" size="20">    </p>  <br>
+                                                        <p><strong><em> Fecha de alquilamiento:      </em></strong>    <input type="date" id="iniciofecha" >        </p>  <br>                                                     
+                                                        <p><strong><em>Fin de alquilamiento:</em></strong>      <input type="date" id="finfecha" > </p>  <br> 
+                                                        <p><Strong><em>Estado :</em></strong>              <input type="text" id="estado" size="30"></p>
+
+                                                        <button onclick="editarReservation()">ACTUALIZAR RESERVA</button>
+                                                        <button onclick="leerReservation()">   TRAER RESERVAS    </button>                                                      
+                                                        <div id="reservacion"></div>
+
+                                                        <h2 style="color:#6a5acd">Puntuación!</h2>
+
+                                                        <p><strong><em>Id Score:  </em></strong>              <input type="number" id="idScore" size="20">    </p>  
+                                                        <p><strong><em> Cuentanos tu experiencia: </em></strong><br>  <textarea id="comentarios" rows="5" cols="30" ></textarea><br></p>                                                          
+                                                        <p><strong><em>Estrellas&#x2730;:</em></strong>       <input type="number" id="stars" size="20" > </p>  <br>
+
+                                                        <button onclick="editarScore()">ACTUALIZAR PUNTAJE</button>
+                                                        <button onclick="leerScore()">   TRAER PUNTAJE    </button>                                                      
+                                                        <div id="score"></div>
+
 
                                                         </body>
                                                         </html>

@@ -127,7 +127,7 @@ function editarCabana() {
 }
 
 function borrarCabana(idCabana) {
-    let data = {
+    let data = {  
         id: idCabana
     };
     let dataToSend = JSON.stringify(data);
