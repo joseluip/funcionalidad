@@ -10,7 +10,7 @@ function leerClientes() {
         dataType: 'json',
 
         success: function (clientes) {
-            let cs = clientes.items;
+            let cs = clientes;
             $("#listaClientes").empty();
             for (i = 0; i < cs.length; i++) {
                 $("#listaClientes").append(cs[i].idClient + " <b>" + cs[i].name + "</b> " + cs[i].email + " " + cs[i].password + " " + cs[i].age);

@@ -6,7 +6,7 @@ function leerReservation() {
         dataType: 'json',
 
         success: function (reservacion) {
-            let cp = reservacion.items;
+            let cp = reservacion;
             $("#reservacion").empty();
             for (i = 0; i < cp.length; i++) {
                 $("#reservacion").append(cp[i].idReservation + " <b>" + cp[i].startDate + "</b> " + cp[i].devolutionDate + " " + cp[i].status);

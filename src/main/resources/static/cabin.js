@@ -6,7 +6,7 @@ function leerCabana() {
         dataType: 'json',
 
         success: function (cabana) {
-            let cb = cabana.items;
+            let cb = cabana;
             $("#cabana").empty();
             for (i = 0; i < cb.length; i++) {
                 $("#cabana").append(cb[i].id + " <b>" + cb[i].brand + "</b> " + cb[i].rooms + " " + cb[i].description + " " + cb[i].name);

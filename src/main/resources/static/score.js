@@ -6,7 +6,7 @@ function leerScore() {
         dataType: 'json',
 
         success: function (score) {
-            let cw = score.items;
+            let cw = score;
             $("#score").empty();
             for (i = 0; i < cw.length; i++) {
                 $("#score").append(cw[i].idScore + " <b>" + cw[i].messageText + "</b> " + cw[i].stars);

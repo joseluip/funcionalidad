@@ -7,7 +7,7 @@ function leerCategoria() {
         dataType: 'json',
 
         success: function (categoria) {
-            let cl = categoria.items;
+            let cl = categoria;
             $("#categoria").empty();
             for (i = 0; i < cl.length; i++) {
                 $("#categoria").append(cl[i].id + " <b>" + cl[i].name + "</b> " + cl[i].description);
