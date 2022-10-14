@@ -10,7 +10,7 @@ function leerMensajes() {
         dataType: 'json',
 
         success: function (mensaje) {
-            let ms = mensaje.items;
+            let ms = mensaje;
             $("#mensaje").empty();
             for (i = 0; i < ms.length; i++) {
                 $("#mensaje").append(ms[i].idMessage + "<b>" + ms[i].messageText + "</b>");
