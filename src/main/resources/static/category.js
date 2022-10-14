@@ -23,7 +23,7 @@ function leerCategoria() {
 
 function guardarCategory() {
     let idCategory = $("#idCategory").val();
-    let Name = $("#name").val();
+    let Name = $("#Nombre").val();
     let Description = $("#descripcion").val();
 
     let data = {
@@ -43,7 +43,7 @@ function guardarCategory() {
         contentType: 'application/json',
         success: function (category) {
             $("#idCategory").val("");
-            $("#name").val("");
+            $("#Nombre").val("");
             $("#descripcion").val("");
             alert("Guardado exitosamente.");
         },
@@ -60,7 +60,7 @@ function guardarCategory() {
 
 function editarCategory() {
     let idCategory = $("#idCategory").val();
-    let Name = $("#name").val();
+    let Name = $("#Nombre").val();
     let Description = $("#descripcion").val();
 
     let data = {
@@ -82,9 +82,9 @@ function editarCategory() {
                 $("#idCategory").focus();
                 return false;
             } else {
-                if ($("#name").val() === "") {
+                if ($("#Nombre").val() === "") {
                     alert("El campo Nombre esta vacio");
-                    $("#name").focus();
+                    $("#Nombre").focus();
                     return false;
                 } else {
                     if ($("#descripcion").val() === "") {
@@ -121,7 +121,7 @@ function borrarCategory(idCategory) {
         contentType: 'application/json',
         success: function (category) {
             $("#idCategory").val("");
-            $("#name").val("");
+            $("#Nombre").val("");
             $("#descripcion").val("");
             alert("Borrado exitosamente.");
         },
