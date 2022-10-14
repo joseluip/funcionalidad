@@ -24,7 +24,7 @@ function leerCategoria() {
 function guardarCategory() {
     let idCategory = $("#idCategory").val();
     let Name = $("#name").val();
-    let Description = $("#Descripcion").val();
+    let Description = $("#descripcion").val();
 
     let data = {
         id: idCategory,
@@ -44,7 +44,7 @@ function guardarCategory() {
         success: function (category) {
             $("#idCategory").val("");
             $("#name").val("");
-            $("#Descripcion").val("");
+            $("#descripcion").val("");
             alert("Guardado exitosamente.");
         },
         error: function (xhr, status) {
@@ -61,7 +61,7 @@ function guardarCategory() {
 function editarCategory() {
     let idCategory = $("#idCategory").val();
     let Name = $("#name").val();
-    let Description = $("#Descripcion").val();
+    let Description = $("#descripcion").val();
 
     let data = {
         id: idCategory,
@@ -87,9 +87,9 @@ function editarCategory() {
                     $("#name").focus();
                     return false;
                 } else {
-                    if ($("#Descripcion").val() === "") {
+                    if ($("#descripcion").val() === "") {
                         alert("El campo Descripción esta vacio");
-                        $("#Descripcion").focus();
+                        $("#descripcion").focus();
                         return false;
                     } else {
                         alert("Actualizado exitosamente.");
@@ -122,7 +122,7 @@ function borrarCategory(idCategory) {
         success: function (category) {
             $("#idCategory").val("");
             $("#name").val("");
-            $("#Descripcion").val("");
+            $("#descripcion").val("");
             alert("Borrado exitosamente.");
         },
         error: function (xhr, status) {
