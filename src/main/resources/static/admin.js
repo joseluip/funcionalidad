@@ -22,13 +22,13 @@ function leerAdmin() {
 
 function guardarAdmin() {
     let idAdmin = $("#idAdmin").val();
-    idAdmin.style.textAling = "center";
+    
     let nombre = $("#nombre").val();
-     nombre.style.textAling = "center";
+     
     let correo= $ ("#email").val();
-     correo.style.textAling = "center";
+     
     let contrasena = $("#password").val();
-     contrasena.style.textAling = "center";
+   
     
     let data = {
         idAdmin: idAdmin,
@@ -48,9 +48,13 @@ function guardarAdmin() {
         contentType: 'application/json',
         success: function (admin) {
             $("#idAdmin").val("");
+            idAdmin.style.textAling = "center";
             $("#nombre").val("");
+             nombre.style.textAling = "center";
             $("#email").val("");
-            $("#password").val("");          
+            correo.style.textAling = "center";
+            $("#password").val("");   
+            contrasena.style.textAling = "center";
             alert("Guardado exitosamente.");
         },
         error: function (xhr, status) {
