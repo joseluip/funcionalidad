@@ -10,7 +10,7 @@ function leerAdmin() {
             $("#administradores").empty();
             for (i = 0; i < ad.length; i++) {                             
                 $("#administradores").append(ad[i].name + "</b> " + ad[i].email+ " ");
-                $("#administradores").append("<button onclick='borrarAdmin background-color:#FF0000;(" + ad[i].idAdmin + ")'>Borrar</button><br>");
+                $("#administradores").append("<button onclick='borrarAdmin(" + ad[i].idAdmin + ")'>Borrar</button><br>");
             }
 
         },
