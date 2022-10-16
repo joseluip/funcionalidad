@@ -9,8 +9,8 @@ function leerAdmin() {
             let ad = administradores;
             $("#administradores").empty();
             for (i = 0; i < ad.length; i++) {                             
-                $("#administradores").append(ad[i].name+ "</b> " + ad[i].email + " " + ad[i].password);
-                $("#administradores").append("<button onclick='borrarAdmin(" + ad[i].idAdmin + ")'>Borrar</button><br>");
+                $("#administradores").append(ad[i].name + "</b> " + ad[i].email+ " ");
+                $("#administradores").append("<button onclick='borrarAdmin background-color:#FF0000;(" + ad[i].idAdmin + ")'>Borrar</button><br>");
             }
 
         },
@@ -47,14 +47,10 @@ function guardarAdmin() {
         data: dataToSend,
         contentType: 'application/json',
         success: function (admin) {
-            $("#idAdmin").val("");
-            idAdmin.style.textAling = "center";
-            $("#nombre").val("");
-             nombre.style.textAling = "center";
-            $("#email").val("");
-            correo.style.textAling = "center";
-            $("#password").val("");   
-            contrasena.style.textAling = "center";
+            $("#idAdmin").val("");          
+            $("#nombre").val("");            
+            $("#email").val("");           
+            $("#password").val("");               
             alert("Guardado exitosamente.");
         },
         error: function (xhr, status) {
