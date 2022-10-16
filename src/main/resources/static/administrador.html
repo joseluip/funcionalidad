@@ -23,6 +23,18 @@
             table{
                 margin:  auto;
                 background-color: #F0FFFF;
+            }            
+            button:hover{
+                font-size:15px;
+                border-radius: 8px;
+                background-color: greenyellow;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                padding: 6px 20px;
+                cursor: pointer;
+            }
+            button{
+                -webkit-transition-duration: 0.4s;
+                transition-duration: 0.4s;
             }
         </style>
     </head>
@@ -45,11 +57,12 @@
             <tr>
                 <td> <p><strong><em style="font-size: larger">Contraseña: </em></strong> <input class="form-control" id="password"  type="password" placeholder="Contraseña administrador"/><br></td>
             </tr>
-
-            <div id="administradores"></div>
-
         </table>
+        
+    <center><button onclick="guardarAdmin()">GUARDAR ADMINISTRADOR</button>
+     <button onclick="leerAdmin()">TRAER ADMINISTRADORES</button></center>
+    <div id="administradores"></div>
 
-    </body>
+</body>
 </html>
 <!-- onload="leerAdmin()" -->
