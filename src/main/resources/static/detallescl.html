@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>DETALLES</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -39,41 +39,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 -webkit-transition-duration: 0.4s;
                 transition-duration: 0.4s;
             }
-        </style>
+        </style>        
     </head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>      
-
-    <script type="text/javascript" src="cabin.js"></script>
-
-    <body> 
-        <a href="cabanas.html"><input type="button" value="REGRESAR" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a> <a href="bienvenido.html"><input type="button" value="◄INICIO" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+    <body>
+        <a href="clientes.html"><input type="button" value="REGRESAR" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a> <a href="bienvenido.html"><input type="button" value="◄INICIO" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a>
         <h1 style="color:#FFF8DC"><em>DETALLES DE USUARIO</em></h1> 
-        <br>       
+        <br>
         <br>
         <table border="3">
             <tr>
-                <th><h2 style="color:#6a5acd">Cabañas!</h2></th>
+                <th><h2 style="color:#6a5acd">Clientes!</h2></th>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Id Cabaña:  </em></strong>       <input type="number" id="idCabana" size="20">    </p></td> 
+                <td><p><strong><em style="font-size: larger">Id de Cliente:</em></strong> <input type="number" id="idCliente" size="20"></p></td>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Marca:      </em></strong>       <input type="text" id="Marca" size="20">         </p></td>
+                <td><p><strong><em style="font-size: larger">Nombre de Cliente:</em></strong> <input type="text" id="nombreCliente" size="20"> </p></td>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Habitaciones:</em></strong>       <input type="number" id="Habitaciones" size="20"></p></td>
+                <td><p><strong><em style="font-size: larger">Correo de Cliente:</em></strong> <input type="text" id="emailCliente" size="20"></p></td>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Descripción:</em></strong>       <input type="text" id="Description" size="30"> </p></td>
+                <td><p><strong><em style="font-size: larger">Contraseña:</em></strong> <input type="password" id="password" size="20"></p></td>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger"> Nombre:      </em></strong>       <input type="text" id="nombre" size="20">        </p></td>
+                <td><p><strong><em style="font-size: larger">Edad de Cliente:</em></strong> <input type="number" id="edadCliente" size="20"></p></td>
             </tr>
         </table>
         <br>
-    <center><button onclick="editarCabana()">ACTUALIZAR CABAÑA</button>
-        <button onclick="leerCabana()">   TRAER CABAÑAS    </button></center>
+    <center><button onclick="editarCliente()">ACTUALIZAR CLIENTE</button>
+        <button onclick="leerClientes()">TRAER CLIENTES</button></center>
 
-    <div id="cabana"></div>
+    <div id="listaClientes"></div>
 </body>
 </html>

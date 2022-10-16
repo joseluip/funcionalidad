@@ -97,16 +97,11 @@ function editarMensaje() {
 }
 
 function borrarMensaje(idMensaje) {
-    let data = {
-        idMessage: idMensaje
-    };
-    let dataToSend = JSON.stringify(data);
 
     $.ajax({
-        url: 'http://132.145.243.225:8080/api/Message/{id}',
+        url: 'http://132.145.243.225:8080/api/Message/'+ idMensaje,
         type: 'DELETE',
-        //   dataType : 'json',
-        data: dataToSend,
+        //   dataType : 'json',       
         contentType: 'application/json',
         success: function (loky) {
             $("#idMensaje").val("");

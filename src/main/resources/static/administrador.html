@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html lang="en">
+    <head>
+        <title>ADMINISTRADOR</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h2{
+                text-align: center;
+                font-size: 5rem;
+            }
+            body{
+                background-color: #85D3F3;
+                background-image: url('https://le-cdn.websites.hibu.com/45d670d7fd884d9f9391180d763ffa39/dms3rep/multi/opt/wd2-1920w.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            table{
+                margin:  auto;
+                background-color: #F0FFFF;
+            }
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+    <body>
+        <a href="bienvenido.html"><input type="button" value="INICIO" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a>
+        <h2 style="color:#9E301C"> CABAÑAS</h2><br>
+
+        <table id="tbladmin" border="4">
+            <tr>
+                <th><h1 style="color:#6a5acd">Adminitradores!</h1></th>
+            </tr>
+            <tr>
+                <td> <p><strong><em style="font-size: larger">Nombre: </em></strong> <input class="form-control" id="nombre" placeholder="Nombre del administrador"/><br></td>
+            </tr>
+            <tr>
+                <td> <p><strong><em style="font-size: larger">Correo:  </em></strong> <input class="form-control" id="email" placeholder="Correo del administrador"/><br></td>
+            </tr>
+            <tr>
+                <td> <p><strong><em style="font-size: larger">Contraseña: </em></strong> <input class="form-control" id="password"  type="password" placeholder="Contraseña administrador"/><br></td>
+            </tr>
+
+            <div id="administradores"></div>
+
+        </table>
+
+    </body>
+</html>
+<!-- onload="leerAdmin()" -->

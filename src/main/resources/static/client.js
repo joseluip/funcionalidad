@@ -131,16 +131,11 @@ function editarCliente() {
 }
 
 function borrarCliente(idCliente) {
-    let data = {
-        idCliente: idCliente
-    };
-    let dataToSend = JSON.stringify(data);
-
+    
     $.ajax({
-        url: 'http://132.145.243.225:8080/api/Client/{id}',
+        url: 'http://132.145.243.225:8080/api/Client/'+ idCliente,
         type: 'DELETE',
-        //   dataType : 'json',
-        data: dataToSend,
+        //   dataType : 'json',       
         contentType: 'application/json',
         success: function (pepito) {
             $("#idCliente").val("");

@@ -107,16 +107,11 @@ function editarScore() {
 }
 
 function borrarScore(idScore) {
-    let data = {  
-        idScore: idScore
-    };
-    let dataToSend = JSON.stringify(data);
-
+    
     $.ajax({
-        url: 'http://132.145.243.225:8080/api/Score/{id}',
+        url: 'http://132.145.243.225:8080/api/Score/'+ idScore,
         type: 'DELETE',
-        //   dataType : 'json',
-        data: dataToSend,
+        //   dataType : 'json',        
         contentType: 'application/json',
         success: function (hola) {
             $("#idScore").val("");

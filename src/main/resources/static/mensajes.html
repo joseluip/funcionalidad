@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
-Front- end de CABIN.
+Front- end de MENSAJE.
 -->
 <html>
     <head>
-        <title>CABAÑAS</title>
+        <title>MENSAJES</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -17,7 +17,7 @@ Front- end de CABIN.
                 background-image: url('https://th.bing.com/th/id/R.22db7a4c6b85aec63452b3e152788cb3?rik=9e6ihxxmlMIKfA&pid=ImgRaw&r=0');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                background-size: cover;
+                background-size: cover;    
             }
             table{
                 margin:  auto;
@@ -38,36 +38,26 @@ Front- end de CABIN.
         </style>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="cabin.js"></script>
-
+    <script type="text/javascript" src="message.js"></script>
     <body>
         <a href="bienvenido.html"><input type="button" value="INICIO" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a>
-
         <h2 style="color:#9E301C"> CABAÑAS</h2><br>
-        <table border="3">
+        <<table border="3">
             <tr>
-                <th><h1 style="color:#6a5acd">Cabañas!</h1></th>
+                <th><h1 style="color:#6a5acd">Mensajes!</h1></th>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Id Cabaña:</em></strong> <input type="number" id="idCabana" size="30"></p></td>
+                <td> <p><strong><em style="font-size: larger">Id Mensaje:   </em></strong> <input type="number" id="idMensaje" size="20"><br></p></td>
             </tr>
             <tr>
-                <td><p><strong><em style="font-size: larger">Marca:</em></strong> <input type="text" id="Marca" size="30"></p></td>
-            </tr>
-            <tr>
-                <td><p><strong><em style="font-size: larger">Habitaciones:</em></strong> <input type="number" id="Habitaciones" size="20"></p></td> 
-            </tr>
-            <tr>
-                <td><p><strong><em style="font-size: larger">Descripción:</em></strong><br><textarea id="Description" rows="5" cols="40"></textarea></p></td>
-            </tr>
-            <tr>
-                <td> <p><strong><em style="font-size: larger"> Nombre:</em> </strong><input type="text" id="nombre" size="30"></p></td>  
+                <td> <p><strong><em style="font-size: larger">Mensaje de texto:</em></strong><br>
+                        <textarea id="comentarios" rows="5" cols="35" ></textarea><br></p></td>
             </tr>
         </table>
-        <br>
 
-    <center><button onclick="guardarCabana()">GUARDAR CABANA</button>
-        <a href="detalles.html"><input type="button" value="DETALLES" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#FFF8DC;padding: 2px 9px;"></a></center>    
-    <div id="cabana"></div>
+    <center> <button onclick="guardarMensaje()">GUARDAR MENSAJE</button>		
+        <a href="detallesms.html"><input type="button" value="DETALLES" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#FFF8DC;padding: 2px 9px;"></a></center>
+
+    <div id="mensaje"></div>
 </body>
 </html>

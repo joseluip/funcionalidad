@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                text-align: center;
+                font-size: 40px;
+            }
+            h2{
+                font-size: 30px;
+            }
+            body{
+                background-color: #85D3F3;
+                background-image: url('https://i.pinimg.com/originals/82/f1/8a/82f18afc8be70377059fb2cc0f20da7e.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            table{
+                margin:  auto;
+                background-color: #F0FFFF;
+            }
+            button:hover{
+                font-size:15px;
+                border-radius: 8px;
+                background-color: greenyellow;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                padding: 6px 20px;
+                cursor: pointer;
+            }
+            button{
+                -webkit-transition-duration: 0.4s;
+                transition-duration: 0.4s;
+            }
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="reservation.js"></script>
+    <body>
+        <a href="reservacion.html"><input type="button" value="REGRESAR" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a> <a href="bienvenido.html"><input type="button" value="◄INICIO" style="cursor: pointer;font-size:15px; border-radius: 8px; background-color:#00FF7F;padding: 2px 9px;"></a>
+        <h1 style="color:#FFF8DC"><em>DETALLES DE USUARIO</em></h1>
+        <br>
+        <br>
+        <table border="3">
+            <tr>
+                <th><h2 style="color:#6a5acd">Reservacion!</h2></th>
+            </tr>
+            <tr>
+                <td><p><strong><em style="font-size: larger">Id Reservation:  </em></strong>      <input type="number" id="idReservation" size="20"></p></td>
+            </tr>
+            <tr>
+                <td><p><strong><em style="font-size: larger"> Fecha de alquilamiento:      </em></strong>    <input type="date" id="iniciofecha" ></p></td>
+            </tr>
+            <tr>
+                <td><p><strong><em style="font-size: larger">Fin de alquilamiento:</em></strong>      <input type="date" id="finfecha" > </p></td>
+            </tr>
+            <tr>
+                <td><p><Strong><em style="font-size: larger">Estado :</em></strong>              <input type="text" id="estado" size="30"></p></td>
+            </tr>
+        </table>
+        <br>
+    <center><button onclick="editarReservation()">ACTUALIZAR RESERVA</button>
+        <button onclick="leerReservation()">   TRAER RESERVAS    </button></center>                                                      
+    <div id="reservacion"></div>
+</body>
+</html>

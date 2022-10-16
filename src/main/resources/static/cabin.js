@@ -127,16 +127,11 @@ function editarCabana() {
 }
 
 function borrarCabana(idCabana) {
-    let data = {  
-        id: idCabana
-    };
-    let dataToSend = JSON.stringify(data);
-
+    
     $.ajax({
-        url: 'http://132.145.243.225:8080/api/Cabin/{id}',
+        url: 'http://132.145.243.225:8080/api/Cabin/'+ idCabana,
         type: 'DELETE',
-        //   dataType : 'json',
-        data: dataToSend,
+        //   dataType : 'json',        
         contentType: 'application/json',
         success: function (cabina) {
             $("#idCabana").val("");

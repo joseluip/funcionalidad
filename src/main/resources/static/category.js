@@ -108,16 +108,11 @@ function editarCategory() {
 }
 
 function borrarCategory(idCategory) {
-    let data = {  
-        id: idCategory
-    };
-    let dataToSend = JSON.stringify(data);
-
+    
     $.ajax({
-        url: 'http://132.145.243.225:8080/api/Category/{id}',
+        url: 'http://132.145.243.225:8080/api/Category/'+ idCategory,
         type: 'DELETE',
-        //   dataType : 'json',
-        data: dataToSend,
+        //   dataType : 'json',        
         contentType: 'application/json',
         success: function (category) {
             $("#idCategory").val("");
