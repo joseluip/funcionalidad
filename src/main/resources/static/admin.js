@@ -8,7 +8,7 @@ function leerAdmin() {
         success: function (administradores) {
             let ad = administradores;
             $("#administradores").empty();
-            for (i = 0; i < ad.length; i++) {
+            for (i = 0; i < ad.length; i++) {                             
                 $("#administradores").append(ad[i].name+ "</b> " + ad[i].email + " " + ad[i].password);
                 $("#administradores").append("<button onclick='borrarAdmin(" + ad[i].idAdmin + ")'>Borrar</button><br>");
             }
@@ -22,9 +22,13 @@ function leerAdmin() {
 
 function guardarAdmin() {
     let idAdmin = $("#idAdmin").val();
+    idAdmin.style.textAling = "center";
     let nombre = $("#nombre").val();
+     nombre.style.textAling = "center";
     let correo= $ ("#email").val();
+     correo.style.textAling = "center";
     let contrasena = $("#password").val();
+     contrasena.style.textAling = "center";
     
     let data = {
         idAdmin: idAdmin,
